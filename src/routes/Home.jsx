@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Navbar from "./Navbar";
 
 const Home = () => {
   const clientId = "e84681ad4b994e17968f708870f765b7";
@@ -59,34 +58,31 @@ const Home = () => {
   }
 
   return (
-    <div className="home">
-      <Navbar/>
-      <div>
-        <h1>Spotify Profile Data</h1>
-        {profile ? (
-          <section id="profile">
-            <h2>Logged in as {profile.display_name}</h2>
-            {profile.images.length > 0 && (
-              <span id="avatar">
-                <img src={profile.images[0].url} alt="Profile" width={200} height={200} />
-              </span>
-            )}
-            <ul>
-              <li>User ID: {profile.id}</li>
-              <li>Email: {profile.email}</li>
-              <li>
-                Spotify URI: <a href={profile.uri}>{profile.uri}</a>
-              </li>
-              <li>
-                Link: <a href={profile.external_urls.spotify}>{profile.external_urls.spotify}</a>
-              </li>
-              {/* <li>Profile Image: {profile.images[0].url}</li>  */}
-            </ul>
-          </section>
-        ) : (
-          <p>Loading...</p>
-        )}
-      </div>
+    <div>
+      <h1>Spotify Profile Data</h1>
+      {profile ? (
+        <section id="profile">
+          <h2>Logged in as {profile.display_name}</h2>
+          {profile.images.length > 0 && (
+            <span id="avatar">
+              <img src={profile.images[0].url} alt="Profile" width={200} height={200} />
+            </span>
+          )}
+          <ul>
+            <li>User ID: {profile.id}</li>
+            <li>Email: {profile.email}</li>
+            <li>
+              Spotify URI: <a href={profile.uri}>{profile.uri}</a>
+            </li>
+            <li>
+              Link: <a href={profile.external_urls.spotify}>{profile.external_urls.spotify}</a>
+            </li>
+            {/* <li>Profile Image: {profile.images[0].url}</li>  */}
+          </ul>
+        </section>
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   );
 };

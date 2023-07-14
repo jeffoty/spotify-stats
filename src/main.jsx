@@ -11,13 +11,30 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import './index.css'
 import ErrorPage from './error-page.jsx';
+import TracksPage from './routes/TracksPage.jsx';
+import Home from './routes/Home.jsx';
+import RecentTracks from './routes/RecentTracks.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
-    errorElement: <ErrorPage/>
-  }
+    errorElement: <ErrorPage/>,
+    children: [
+      {
+        path: "/",
+        element: <Home/>,
+      },
+      {
+        path: "/tracks",
+        element: <TracksPage/>,
+      },
+      {
+        path: "/recent-tracks",
+        element: <RecentTracks/>,
+      }
+    ]
+  },
 ])
 
 
