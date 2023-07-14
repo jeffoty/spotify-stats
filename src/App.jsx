@@ -1,13 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import Artists from './Components/Top Artists';
-import TopTracks from "./Components/Top Tracks";
-import Home from "./Components/Home";
 import { BrowserRouter } from "react-router-dom";
+import Artists from "./Components/Top Artists/Top Artists.jsx";
+import TopTracks from "./Components/Top Tracks/Top Tracks.jsx";
+import Home from "./Components/Home";
 
-import './App.css'
+import "./App.css";
 
 function App() {
-
   return (
     <>
       <BrowserRouter>
@@ -20,5 +19,5 @@ function App() {
     </>
   );
 }
- 
-export default App
+
+export default App;

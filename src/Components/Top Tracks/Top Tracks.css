@@ -1,0 +1,18 @@
+.container {
+  margin-left: 14%;
+  padding-top: 5%;
+  display: flex;
+  gap: 50%;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 800;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+section{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  color: aliceblue;
+}
