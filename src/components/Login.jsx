@@ -14,6 +14,7 @@ const Login = () => {
 
     if (accessToken) {
       // Access token exists, perform further actions
+      localStorage.setItem("Access token", JSON.stringify(accessToken))
       console.log("Access token:", accessToken);
       // Add your logic here for handling the access token
     }
