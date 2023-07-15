@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import "../assets/styles/Login.css"
+import {
+  setLocalAccessToken
+} from "../services/index";
 import spotify from "../assets/images/spotify.svg"
 
 
@@ -11,10 +14,13 @@ const Login = () => {
     // Check if the access token exists in the URL hash
     const params = new URLSearchParams(window.location.hash.substr(1));
     const accessToken = params.get("access_token");
+    const tokenType = params.get("token_type")
+    const expiresIn = params.get("expires_in")
+    const tokenState = params.get("state")
 
     if (accessToken) {
       // Access token exists, perform further actions
-      localStorage.setItem("Access token", JSON.stringify(accessToken))
+      setLocalAccessToken(accessToken)
       console.log("Access token:", accessToken);
       // Add your logic here for handling the access token
     }
