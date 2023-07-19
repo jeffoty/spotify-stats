@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getAccessToken, getFollowing, getPlaylists, getUser, getUserId } from '../services'
+import { getAccessToken, getFollowing, getPlaylists, getUser } from '../services'
 
 function Profile() {
 
@@ -13,7 +13,6 @@ function Profile() {
     getUser().then(resp => setUser(resp.data))
     getFollowing().then(resp => setFollowing(resp.data.artists.total))
     getPlaylists().then(resp => console.log(resp.data))
-    // getUserId()
   }, [])
   
 
