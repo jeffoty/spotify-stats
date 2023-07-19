@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getAccessToken, getFollowing, getPlaylists, getUser } from '../services'
 
 function Profile() {
