@@ -27,7 +27,7 @@ const Login = () => {
   }, []);
 
   function redirectToAuthCodeFlow() {
-    const scopes = ["user-read-private", "user-read-email"];
+    const scopes = ["user-read-private", "user-read-email", "user-follow-read", "user-library-read"];
     const state = generateRandomString(16);
 
     const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(
