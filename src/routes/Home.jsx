@@ -5,11 +5,11 @@ import { getAccessToken } from "../services";
 
 const Home = () => {
 
-  cconst [token, setToken] = useState(null)
+  const [token, setToken] = useState(null)
 
   useEffect(() => {
     setToken(getAccessToken)
-  }, [third])
+  }, [])
   
   if (token) {
     return (<Profile/>)
