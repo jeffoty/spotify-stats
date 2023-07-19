@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import "../assets/styles/Login.css"
+import {
+  setLocalAccessToken
+} from "../services/index";
 import spotify from "../assets/images/spotify.svg"
 
 
@@ -11,16 +14,20 @@ const Login = () => {
     // Check if the access token exists in the URL hash
     const params = new URLSearchParams(window.location.hash.substr(1));
     const accessToken = params.get("access_token");
+    const tokenType = params.get("token_type")
+    const expiresIn = params.get("expires_in")
+    const tokenState = params.get("state")
 
     if (accessToken) {
       // Access token exists, perform further actions
+      setLocalAccessToken(accessToken)
       console.log("Access token:", accessToken);
       // Add your logic here for handling the access token
     }
   }, []);
 
   function redirectToAuthCodeFlow() {
-    const scopes = ["user-read-private", "user-read-email"];
+    const scopes = ["user-read-private", "user-read-email", "user-follow-read", "user-library-read"];
     const state = generateRandomString(16);
 
     const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(
