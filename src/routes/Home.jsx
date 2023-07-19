@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import Login from "../components/Login";
-import Profile from "../components/Profile";
-import { getAccessToken } from "../services";
 
 const Home = () => {
+  const clientId = "e84681ad4b994e17968f708870f765b7";
+  const redirectUri = "http://localhost:5173/";
 
-  const [token, setToken] = useState(null);
+  const [profile, setProfile] = useState(null);
 
   useEffect(() => {
     // Check if the access token exists in the URL hash
@@ -18,7 +17,10 @@ const Home = () => {
     } else {
       // Access token exists, fetch profile data
       fetchProfile(accessToken)
-        .then((profile) => setProfile(profile))
+        .then((profile) => {
+          setProfile(profile)
+          console.log(profile.images[0] ? "something" : "blank");
+        })
         .catch((error) => console.error(error));
     }
   }, []);
@@ -75,7 +77,7 @@ const Home = () => {
             <li>
               Link: <a href={profile.external_urls.spotify}>{profile.external_urls.spotify}</a>
             </li>
-            <li>Profile Image: {profile.images[0].url}</li>
+            {/* <li>Profile Image: {profile.images[0].url}</li>  */}
           </ul>
         </section>
       ) : (
