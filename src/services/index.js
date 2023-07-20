@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const setLocalAccessToken = (token) => {
-  window.localStorage.setItem("Access token", JSON.stringify(token));
+  localStorage.setItem("Access token", JSON.stringify(token));
 };
 
 export const getAccessToken = () => {

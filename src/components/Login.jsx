@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../assets/styles/Login.css"
 import spotify from "../assets/images/spotify.svg"
+import { setLocalAccessToken } from "../services";
 
 
 const Login = () => {
@@ -15,6 +16,7 @@ const Login = () => {
     if (accessToken) {
       // Access token exists, perform further actions
       console.log("Access token:", accessToken);
+      setLocalAccessToken(accessToken)
       // Add your logic here for handling the access token
     }
   }, []);
