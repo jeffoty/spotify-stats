@@ -22,12 +22,14 @@ const Login = () => {
   }, []);
 
   function redirectToAuthCodeFlow() {
-    const scopes = ["user-read-private", "user-read-email"];
+    const scope = 
+      "user-read-private user-read-email user-read-recently-played user-top-read user-follow-read user-follow-modify playlist-read-private playlist-read-collaborative playlist-modify-public";
+
     const state = generateRandomString(16);
 
     const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(
       redirectUri
-    )}&scope=${encodeURIComponent(scopes.join(" "))}&state=${state}`;
+    )}&scope=${encodeURIComponent(scope)}&state=${state}`;
 
     // Redirect the user to the Spotify authorization page
     window.location.href = authUrl;
