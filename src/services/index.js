@@ -26,6 +26,6 @@ export const getPlaylists = () =>
 
 export const getTopTracks = () =>
   axios.get(
-    "https://api.spotify.com/v1/me/top/tracks?limit=5&time_range=short_term",
+    "https://api.spotify.com/v1/me/top/tracks?limit=30&time_range=short_term",
     { headers }
   );
