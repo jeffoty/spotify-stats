@@ -13,6 +13,9 @@ function Navbar() {
   <li class="nav-item">
     <Link to={'/recent-tracks'} class="nav-link">Recent Tracks</Link>
   </li>
+  <li class="nav-item">
+    <Link to={'/artists'} class="nav-link">Top Artists</Link>
+  </li>
 </ul>
   )
 }
