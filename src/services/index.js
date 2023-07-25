@@ -29,3 +29,6 @@ export const getTopTracks = () =>
     "https://api.spotify.com/v1/me/top/tracks?limit=5&time_range=short_term",
     { headers }
   );
+
+export const removeLocalAccessToken = () => {
+  localStorage.removeItem("Access token")};
