@@ -8,6 +8,7 @@ function TracksPage() {
 
   useEffect(() => {
     getTopTracks().then(resp =>{
+      console.log(resp.data.items);
       setTopTracks(resp.data.items)
     })
   }, [])
@@ -15,7 +16,7 @@ function TracksPage() {
   return (
     <div className="top-tracks">
           {topTracks && topTracks.map((track) => (
-            <Track trackID={track.id} loading="lazy"/>
+            <Track track={track} loading="lazy"/>
           ))}
     </div>
   )

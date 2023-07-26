@@ -2,11 +2,6 @@
   width: 100%;
 }
 
-.panel {
-  border-radius: 12px;
-  border: none;
-}
-
-iframe {
-  background-color: black;
+.track-img {
+  width: 100px;
 }
