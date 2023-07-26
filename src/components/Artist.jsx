@@ -1,4 +1,5 @@
 import React from 'react'
+import '../Styles/Artist.css'
 
 function Artist({artist}) {
   return (

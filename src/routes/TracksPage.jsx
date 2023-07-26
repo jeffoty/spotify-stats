@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Track from '../components/Track'
 import { getTopTracks } from '../services'
+import '../Styles/TopTracks.css'
 
 function TracksPage() {
   const [topTracks, setTopTracks] = useState(null)
@@ -13,14 +14,9 @@ function TracksPage() {
 
   return (
     <div className="top-tracks">
-      <h2>Top Tracks</h2>
-      <div className="track-list">
-        <div className="track-row">
           {topTracks && topTracks.map((track) => (
-            <Track trackID={track.id}/>
+            <Track trackID={track.id} loading="lazy"/>
           ))}
-        </div>
-      </div>
     </div>
   )
 }

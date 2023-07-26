@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import '../Styles/Navbar.css'
 
 function Navbar() {
   return (
-    <ul class="nav nav-tabs nav-fill">
+    <ul class="navbar">
   <li class="nav-item">
     <Link to={'/'} class="nav-link active" aria-aria-current="page">Profile</Link>
   </li>
