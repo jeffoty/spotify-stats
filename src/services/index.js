@@ -5,7 +5,7 @@ export const setLocalAccessToken = (token) => {
 };
 
 export const getAccessToken = () => {
-  return JSON.parse(window.localStorage.getItem("Access token"));
+  return JSON.parse(localStorage.getItem("Access token"));
 };
 
 const headers = {
@@ -23,3 +23,12 @@ export const getPlaylists = () =>
   axios.get("https://api.spotify.com/v1/me/playlists", {
     headers,
   });
+
+export const getTopTracks = () =>
+  axios.get(
+    "https://api.spotify.com/v1/me/top/tracks?limit=5&time_range=short_term",
+    { headers }
+  );
+
+export const removeLocalAccessToken = () => {
+  localStorage.removeItem("Access token")};
