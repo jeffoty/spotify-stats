@@ -24,7 +24,7 @@ function Profile() {
   
 
   return (
-    <div>Profile
+    <div>
       {
         user ? (
           <div className="profile-info">
