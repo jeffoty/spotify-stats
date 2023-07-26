@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "../assets/styles/Login.css"
 import spotify from "../assets/images/spotify.svg"
 import { setLocalAccessToken } from "../services";

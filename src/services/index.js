@@ -35,3 +35,6 @@ export const getTopArtists = () =>
     "https://api.spotify.com/v1/me/top/artists?limit=30&time_range=short_term",
     { headers }
   );
+
+export const removeLocalAccessToken = () => {
+  localStorage.removeItem("Access token")};

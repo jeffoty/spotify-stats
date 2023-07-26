@@ -1,24 +1,41 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import '../Styles/Navbar.css'
+// import React from "react";
+import { Link } from "react-router-dom";
+import { removeLocalAccessToken, getAccessToken } from "../services";
 
 function Navbar() {
+  const isLoggedIn = !!getAccessToken();
+
+  function handleLogout() {
+    removeLocalAccessToken();
+    window.location.href = "/";
+  }
+
   return (
-    <ul class="navbar">
-  <li class="nav-item">
-    <Link to={'/'} class="nav-link active" aria-aria-current="page">Profile</Link>
-  </li>
-  <li class="nav-item">
-    <Link to={'/tracks'} class="nav-link">Tracks</Link>
-  </li>
-  <li class="nav-item">
-    <Link to={'/recent-tracks'} class="nav-link">Recent Tracks</Link>
-  </li>
-  <li class="nav-item">
-    <Link to={'/artists'} class="nav-link">Top Artists</Link>
-  </li>
-</ul>
-  )
+    <ul className="nav nav-tabs nav-fill">
+      <li className="nav-item">
+        <Link to={"/"} className="nav-link active" aria-current="page">
+          Profile
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link to={"/tracks"} className="nav-link">
+          Tracks
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link to={"/recent-tracks"} className="nav-link">
+          Recent Tracks
+        </Link>
+      </li>
+      {isLoggedIn && (
+        <li className="nav-item">
+          <button className="logout-button" onClick={handleLogout}>
+            Log out
+          </button>
+        </li>
+      )}
+    </ul>
+  );
 }
 
-export default Navbar
+export default Navbar;
