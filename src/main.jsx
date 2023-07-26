@@ -6,14 +6,15 @@ import {
   RouterProvider
 } from "react-router-dom"
 // Bootstrap CSS
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
-import "bootstrap/dist/js/bootstrap.bundle.min";
+// import "bootstrap/dist/js/bootstrap.bundle.min";
 import './index.css'
 import ErrorPage from './error-page.jsx';
 import TracksPage from './routes/TracksPage.jsx';
 import Home from './routes/Home.jsx';
 import RecentTracks from './routes/RecentTracks.jsx';
+import TopArtists from './routes/TopArtists.jsx';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/recent-tracks",
         element: <RecentTracks/>,
+      },
+      {
+        path: "/artists",
+        element: <TopArtists/>,
       }
     ]
   },

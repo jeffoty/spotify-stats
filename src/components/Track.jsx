@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import '../Styles/Track.css'
 
-function Track({trackID}) {
-
-  const trackLink = `https://open.spotify.com/embed/track/${trackID}?utm_source=generator`
+function Track({track}) {
 
   return (
-    <div><iframe style={{borderRadius: "12px"}} src={trackLink} width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+    <div className='track-panel'>
+        <h2>{track.name}</h2>
+        <img className='track-img' src={track.album.images[0].url} alt="" />
+    </div>
   )
 }
 
