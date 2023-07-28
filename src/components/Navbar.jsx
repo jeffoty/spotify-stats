@@ -27,6 +27,11 @@ function Navbar() {
           Recent Tracks
         </Link>
       </li>
+      <li className="nav-item">
+        <Link to={"/artists"} className="nav-link">
+          Top Artists
+        </Link>
+      </li>
       {isLoggedIn && (
         <li className="nav-item">
           <button className="logout-button" onClick={handleLogout}>

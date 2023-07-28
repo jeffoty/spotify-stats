@@ -15,9 +15,9 @@ function TracksPage() {
 
   return (
     <div className="top-tracks">
-          {topTracks && topTracks.map((track) => (
-            <Track track={track} loading="lazy"/>
-          ))}
+          {
+            topTracks && topTracks.map(track => <Track track={track} key={track.id}/>)
+          }
     </div>
   )
 }
