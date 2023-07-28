@@ -4,8 +4,8 @@ import '../Styles/Artist.css'
 function Artist({artist}) {
   return (
     <div className='artist'>
-      <img className='artist-img' src={artist.images[0].url} alt="artist profile" />
-      <h3>{ artist.name }</h3>
+      <a href={artist.external_urls.spotify} target='_blank'><img className='artist-img' src={artist.images[0].url} alt="artist profile" /></a>
+      <a href={artist.external_urls.spotify} target='_blank'>{ artist.name }</a>
     </div>
   )
 }
