@@ -15,7 +15,7 @@ function TopArtists() {
   return (
     <div className='top-artists'>
       {
-        topArtists && topArtists.map(artist => <Artist artist={artist}/>)
+        topArtists && topArtists.map(artist => <Artist artist={artist} key={artist.id}/>)
       }
     </div>
   )
