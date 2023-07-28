@@ -42,9 +42,21 @@ export const getTopTracksLongTerm = () =>
     { headers }
   );
 
-export const getTopArtists = () =>
+export const getTopArtistsShortTerm = () =>
   axios.get(
     "https://api.spotify.com/v1/me/top/artists?limit=30&time_range=short_term",
+    { headers }
+  );
+
+export const getTopArtistsMediumTerm = () =>
+  axios.get(
+    "https://api.spotify.com/v1/me/top/artists?limit=30&time_range=medium_term",
+    { headers }
+  );
+
+export const getTopArtistsLongTerm = () =>
+  axios.get(
+    "https://api.spotify.com/v1/me/top/artists?limit=30&time_range=long_term",
     { headers }
   );
 
