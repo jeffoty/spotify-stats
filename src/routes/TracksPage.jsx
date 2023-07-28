@@ -13,16 +13,20 @@ function TracksPage() {
     })
   }, [])
 
+  const getShortTerm = () => {
+    getTopTracksShortTerm().then(resp => {
+      setTopTracks(resp.data.items)
+    })
+  }
+
   const getMediumTerm = () => {
     getTopTracksMediumTerm().then(resp => {
-      console.log("medium term");
       setTopTracks(resp.data.items)
     })
   }
 
   const getLongTerm = () => {
     getTopTracksLongTerm().then(resp => {
-      console.log("long term");
       setTopTracks(resp.data.items)
     })
   }
@@ -30,6 +34,7 @@ function TracksPage() {
   return (
     <div className="tracks-page">
       <div className="buttons-section">
+        <button onClick={e => getShortTerm()}>Short Term</button>
         <button onClick={e => getMediumTerm()}>Medium Term</button>
         <button onClick={e => getLongTerm()}>Long Term</button>
       </div>
