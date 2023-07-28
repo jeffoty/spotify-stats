@@ -15,6 +15,7 @@ import TracksPage from './routes/TracksPage.jsx';
 import Home from './routes/Home.jsx';
 import RecentTracks from './routes/RecentTracks.jsx';
 import TopArtists from './routes/TopArtists.jsx';
+import TopPlaylist from './routes/TopPlaylist.jsx'
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/artists",
         element: <TopArtists/>,
+      },
+      {
+        path: "/playlist",
+        element: < TopPlaylist />
       }
     ]
   },
