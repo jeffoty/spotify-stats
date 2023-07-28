@@ -11,6 +11,7 @@ function Track({track}) {
         <h2>{track?.name}</h2>
         <img className='track-img' src={track?.album.images[2].url} alt="" loading='lazy'/>
         <p>{ combineArtists(track?.artists) }</p>
+        <p>{ track?.album.name }</p>
         <p>{ getDuration(track?.duration_ms) }</p>
     </div>
   )
